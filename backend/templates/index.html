@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProShop – Boutique Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <header class="bg-gradient-to-r from-blue-700 to-purple-800 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <h1 class="text-4xl font-bold"><i class="fas fa-store mr-3"></i>ProShop</h1>
+      <p class="text-xl">Livraison gratuite dès 150€</p>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-br from-blue-600 to-purple-700 text-white py-24">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-6xl font-extrabold mb-6">Nos Produits Exclusifs</h2>
+      <p class="text-2xl opacity-90">Qualité premium • Prix imbattables</p>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {% for product in products %}
+      <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300">
+        <div class="bg-gray-200 border-2 border-dashed h-64 flex items-center justify-center">
+          <i class="fas fa-laptop text-8xl text-gray-400"></i>
+        </div>
+        <div class="p-8 text-center">
+          <h3 class="text-2xl font-bold mb-4">{{ product[1] }}</h3>
+          <p class="text-5xl font-extrabold text-blue-600 mb-6">{{ product[2 ] }} €</p>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-xl transition shadow-lg">
+            <i class="fas fa-cart-plus mr-3"></i>Ajouter au panier
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-12 text-center">
+    <p class="text-xl">© 2025 ProShop – Tous droits réservés</p>
+  </div>
+</footer>
+</body>
+</html>

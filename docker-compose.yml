@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web-app:
+    image: 192.168.137.60:5000/proshop-app:latest
+    environment:
+      - DB_HOST=db-server          # ← C’EST ÇA QUI MANQUAIT
+      - DB_NAME=proshopdb
+      - DB_USER=proadmin
+      - DB_PASSWORD=ProShopSecurePwd123
+    ports:
+      - "8000:5000"
+    deploy:
+      replicas: 3
+
+  db-server:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: proshopdb
+      POSTGRES_USER: proadmin
+      POSTGRES_PASSWORD: ProShopSecurePwd123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    deploy:
+      placement:
+        constraints: [node.hostname == swarm-node1]
+
+volumes:
+  postgres_data:
