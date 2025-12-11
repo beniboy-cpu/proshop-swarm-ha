@@ -3,30 +3,32 @@
 E-commerce Flask + PostgreSQL sur un cluster **Docker Swarm 3 nœuds** (haute disponibilité) :
 
 ## Fonctionnalités
+
 - 3 replicas Flask (load-balancing automatique)
-- PostgreSQL persistante (volume sur node1)
-- Traefik + HTTPS auto[](https://proshop.local)
+- PostgreSQL persistant (volume sur node1)
 - Monitoring Grafana + Prometheus + cAdvisor
 - Registry local + Portainer pour gestion web
 
+---
+
 ## Démo
-![Site en live](screenshots/podman.PNG)
 
-![Cluster Portainer](screenshots/site finale.PNG)
+### 🛒 Site en live
+![Site live](screenshots/site.png)
 
-![Monitoring Grafana](screenshots/graphana.PNG)
+### 🖥️ Cluster Portainer
+![Cluster Portainer](screenshots/cluster.png)
 
-![Traefik Dashboard](screenshots/cluster.PNG)
+### 📊 Monitoring Grafana
+![Monitoring Grafana](screenshots/grafana.png)
 
-## Lancement rapide (sur Ubuntu VMs)
-1. `docker swarm init --advertise-addr 192.168.137.60`
-2. `docker stack deploy -c docker-compose.yml proshop`
+### 🧰 Podman registry (optionnel)
+![Podman](screenshots/podman.png)
 
-Site disponible sur http://192.168.137.60:8000 (ou https://proshop.local avec Traefik).
+---
 
-## Tech Stack
-- Backend : Flask + psycopg2
-- DB : PostgreSQL 13
-- Infra : Docker Swarm, Traefik, Grafana
+## 🚀 Lancement rapide (sur Ubuntu VMs)
 
-#Docker #Swarm #Flask #DevOps #Python #Monitoring
+```bash
+docker swarm init --advertise-addr 192.168.137.60
+docker stack deploy -c docker-compose.yml proshop
