@@ -10,13 +10,13 @@ E-commerce Flask + PostgreSQL sur un cluster **Docker Swarm 3 nœuds** (haute di
 - Registry local + Portainer pour gestion web
 
 ## Démo
-![Site en live](screenshots/site.png)
+![Site en live](screenshots/podman.PNG)
 
-![Cluster Portainer](screenshots/portainer.png)
+![Cluster Portainer](screenshots/site finale.PNG)
 
-![Monitoring Grafana](screenshots/grafana.png)
+![Monitoring Grafana](screenshots/graphana.PNG)
 
-![Traefik Dashboard](screenshots/traefik.png)
+![Traefik Dashboard](screenshots/cluster.PNG)
 
 ## Lancement rapide (sur Ubuntu VMs)
 1. `docker swarm init --advertise-addr 192.168.137.60`
